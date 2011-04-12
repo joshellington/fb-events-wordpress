@@ -37,12 +37,6 @@ function processFbEvent($post) {
 		$end_time = date('g:i a', strtotime($fbresults['end_time']));
 		$venue = $fbresults['venue']['street'].', '.$fbresults['venue']['city'].', '.$fbresults['venue']['city'];
 		
-		/* DEBUGGING
-		$message = $post."\n".'Name: '."\n".$name."\n\n".'Event ID: '."\n".$event_id."\n\n".'Description: '."\n".$desc."\n\n".'Time: '."\n".$start_time.'-'.$end_time;
-		
-		mail('joshe181@gmail.com', 'Test', $message);
-		*/
-		
 		// NEED TO ADD - Detection of field content		
 		update_post_meta($post, 'wvn-event-eventid', $event_id);
 		update_post_meta($post, 'wvn-event-desc', $desc);
